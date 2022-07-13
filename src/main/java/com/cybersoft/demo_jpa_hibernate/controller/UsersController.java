@@ -63,9 +63,8 @@ public class UsersController {
 				"", HttpStatus.OK);
 	} 
 	
-	/* Tạo API Thêm Users mới
-	 * Tạo API xoá users theo Id
-	 * 
+	/* Tạo API thêm Users mới
+	 * Tạo API xoá users theo ID
 	 * */
 	
 }
