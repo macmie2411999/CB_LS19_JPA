@@ -34,27 +34,35 @@ public class UsersController {
 	
 	@GetMapping("/{username}")
 	public ResponseEntity<?> getUsersByUserName(
-			@PathVariable("username") String username
-			){
+			@PathVariable("username") String username){
 		return new ResponseEntity<List<Users>>(
 				serviceImp.getUsersByUserName(username), HttpStatus.OK);
 	}
 	
 	@PostMapping("/create")
 	public ResponseEntity<?> getUsersByUserName(
-			@RequestBody Users users
-			){
+			@RequestBody Users users){
+		serviceImp.insertUsers(users);
+
+		return new ResponseEntity<String>(
+				"", HttpStatus.OK);
+	}
+
+//	@PostMapping("/createDemo")
+//	public ResponseEntity<?> getUsersByUserNameDemo(
+//			@RequestParam("username") String username,
+//			@RequestParam("role_id") int role_id){
 //		Users users = new Users();
 //		users.setUserName(username);
 //		Roles roles = new Roles();
 //		roles.setId(role_id);
 //		users.setRole(roles);
-		serviceImp.insertUsers(users);
+//		serviceImp.insertUsers(users);
+//
+//		return new ResponseEntity<String>(
+//				"", HttpStatus.OK);
+//	}
 
-		return new ResponseEntity<String>(
-				"", HttpStatus.OK);
-	} 
-	
 	@GetMapping("/delete/{id}")
 	public ResponseEntity<?> deleteUserById(
 			@PathVariable("id") int id){
