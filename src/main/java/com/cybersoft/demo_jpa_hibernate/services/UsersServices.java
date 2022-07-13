@@ -3,11 +3,13 @@ package com.cybersoft.demo_jpa_hibernate.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import com.cybersoft.demo_jpa_hibernate.entity.Users;
 import com.cybersoft.demo_jpa_hibernate.repository.UsersRepository;
 
+@Primary
 @Service
 public class UsersServices implements UsersServiceImp {
 
