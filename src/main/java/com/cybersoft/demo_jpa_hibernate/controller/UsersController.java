@@ -50,19 +50,15 @@ public class UsersController {
 //		roles.setId(role_id);
 //		users.setRole(roles);
 		serviceImp.insertUsers(users);
-		serviceImp.getAllUser();
-		
+
 		return new ResponseEntity<String>(
 				"", HttpStatus.OK);
 	} 
 	
 	@GetMapping("/delete/{id}")
 	public ResponseEntity<?> deleteUserById(
-			@PathVariable("id") int id
-			){
-		
+			@PathVariable("id") int id){
 		serviceImp.deleteUsersById(id);
-		
 		return new ResponseEntity<String>(
 				"", HttpStatus.OK);
 	} 
